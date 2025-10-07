@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const footerPlaceholder = document.getElementById('footer-placeholder');
     
     if (footerPlaceholder) {
-        fetch('components/footer.html')
+        fetch('/components/footer.html')
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok ' + response.statusText);

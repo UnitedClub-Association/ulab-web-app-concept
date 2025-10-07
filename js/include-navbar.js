@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const navbarPlaceholder = document.getElementById('navbar-placeholder');
     
     if (navbarPlaceholder) {
-        fetch('components/navbar.html')
+        fetch('/components/navbar.html')
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok ' + response.statusText);
@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 // The navbar.html itself loads its CSS, but the JS needs to be re-loaded
                 // to execute in the context of the main document. We fetch and append it.
-                return fetch('js/navbar.js');
+                return fetch('/js/navbar.js');
             })
             .then(response => response.text())
             .then(scriptText => {
